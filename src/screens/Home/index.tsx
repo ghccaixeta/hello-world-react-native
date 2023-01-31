@@ -28,8 +28,9 @@ export function Home() {
 
         </View>
 
-        <Participant/>
-        <Participant/>
+        <Participant name="Joe Hartz"/>
+        <Participant name="Michel Brear"/>
+        <Participant name="Rose Stug"/>
 
         <StatusBar style="auto" />
     </View>
