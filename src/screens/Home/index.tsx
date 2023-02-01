@@ -2,15 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { styles} from './styles'
 import { Participant } from '../../components/Participant'
+import { useState } from 'react';
 
 export function Home() {
 
-  const participants = ['Peter Parker','Tony Stark','Bruce Wayne','Stan Lee','Robert Bruce','Thor Odinson','Rick Jones','Steven Grant Rogers','T\'Challa','Victor Shade','Jacques Duquesne']
+  const [participants, setParticipants] = useState(['Peter Parker'])
 
-  function handleParticipantAdd(){
-    if(participants.includes('Peter Parker')){
+  function handleParticipantAdd(name?:string){
+    if(participants.includes('Gustavo')){
       return Alert.alert("Oops!","Already exists a participant with this name!")
     }
+
+    setParticipants(prevState => [...prevState,'Tony Stark'])
   }
 
   function handleParticipantRemove(name?:string) {
@@ -40,7 +43,7 @@ export function Home() {
           keyboardType="numeric"
           />
 
-          <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+          <TouchableOpacity style={styles.button} onPress={()=>handleParticipantAdd('dsfs')}>
             <Text style={styles.buttonText} >+</Text>
           </TouchableOpacity>
 
