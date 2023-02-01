@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, FlatList, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { styles} from './styles'
 import { Participant } from '../../components/Participant'
 
@@ -8,11 +8,23 @@ export function Home() {
   const participants = ['Peter Parker','Tony Stark','Bruce Wayne','Stan Lee','Robert Bruce','Thor Odinson','Rick Jones','Steven Grant Rogers','T\'Challa','Victor Shade','Jacques Duquesne']
 
   function handleParticipantAdd(){
-    console.log("handleParticipantAdd")
+    if(participants.includes('Peter Parker')){
+      return Alert.alert("Oops!","Already exists a participant with this name!")
+    }
   }
 
   function handleParticipantRemove(name?:string) {
-    console.log("handleParticipantRemove"+name)
+    return Alert.alert("Remove participant",`Delete the participant ${name}?`,[
+      {
+        text: 'Yes',
+        onPress: ()=> Alert.alert("Deleted!")
+      },
+      {
+        text: 'Nope',
+        style: 'destructive'
+      }
+    ])
+    
   }
 
   return (
@@ -41,7 +53,7 @@ export function Home() {
             <Participant 
             key={item}
             name={item}
-            onRemove={handleParticipantRemove} />
+            onRemove={()=>handleParticipantRemove(item)} />
           )}
           showsVerticalScrollIndicator={false}
           ListEmptyComponent={()=>(
