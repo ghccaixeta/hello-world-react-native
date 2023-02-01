@@ -20,10 +20,11 @@ export const styles = StyleSheet.create({
         fontSize: 30,
       },
       button:{
-        borderRadius: 5,
+        borderTopEndRadius: 5,
+        borderBottomEndRadius: 5,
         width: 56,
         height: 56,
-        backgroundColor: '#ff5555',
+        backgroundColor: '#ffb86c',
         alignItems: 'center',
         justifyContent: 'center',
         
