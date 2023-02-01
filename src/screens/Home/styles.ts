@@ -55,6 +55,15 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       marginTop: 30,
       marginBottom: 30,
+    },
+    scrollview:{
+      width: '100%'
+    },
+    emptyList:{
+      textAlign: 'center',
+      color: '#ff79c6',
+      fontSize: 28
     }
+
 
   });
