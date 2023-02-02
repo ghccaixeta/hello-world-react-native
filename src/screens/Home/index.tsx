@@ -6,14 +6,16 @@ import { useState } from 'react';
 
 export function Home() {
 
-  const [participants, setParticipants] = useState(['Peter Parker'])
+  const [participants, setParticipants] = useState<string[]>([])
+  const [participantsName, setParticipantsName] = useState('')
 
   function handleParticipantAdd(name?:string){
-    if(participants.includes('Gustavo')){
+    if(participants.includes(participantsName)){
       return Alert.alert("Oops!","Already exists a participant with this name!")
     }
 
-    setParticipants(prevState => [...prevState,'Tony Stark'])
+    setParticipants(prevState => [...prevState,participantsName])
+    setParticipantsName('')
   }
 
   function handleParticipantRemove(name?:string) {
@@ -40,7 +42,8 @@ export function Home() {
           style={styles.input} 
           placeholder="Type anything."
           placeholderTextColor={"#282a36"}
-          keyboardType="numeric"
+          onChangeText={setParticipantsName}
+          value={participantsName}
           />
 
           <TouchableOpacity style={styles.button} onPress={()=>handleParticipantAdd('dsfs')}>
