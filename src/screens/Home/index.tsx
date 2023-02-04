@@ -19,10 +19,11 @@ export function Home() {
   }
 
   function handleParticipantRemove(name?:string) {
+    
     return Alert.alert("Remove participant",`Delete the participant ${name}?`,[
       {
         text: 'Yes',
-        onPress: ()=> Alert.alert("Deleted!")
+        onPress: ()=> setParticipants(prevState => prevState.filter(participant => participant !== name))
       },
       {
         text: 'Nope',
