@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     buttonText:{
         color: '#282a36',
-        fontSize: 30,
+        fontSize: 40,
       },
       button:{
         borderTopEndRadius: 5,

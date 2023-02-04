@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     },
 
     buttonText:{
-      color: '#f8f8f2',
+      color: '#282a36',
       fontSize: 30,
     },
     button:{
