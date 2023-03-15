@@ -36,7 +36,7 @@ export function Home() {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Hello World!</Text>
-        <Text style={styles.subtitle}>With Dracula Theme!</Text>
+        <Text style={styles.subtitle}>With Dracula Theme</Text>
 
         <View style={styles.form}>
           <TextInput
